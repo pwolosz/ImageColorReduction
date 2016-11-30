@@ -1,0 +1,10 @@
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\bin\Debug\GKLab3.exe.config
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\bin\Debug\GKLab3.exe
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\bin\Debug\GKLab3.pdb
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.csprojResolveAssemblyReference.cache
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.Properties.Resources.resources
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.csproj.GenerateResource.Cache
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.exe
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.pdb
+c:\users\patryk\documents\visual studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.Views.MainView.resources
+C:\Users\Patryk\Documents\Visual Studio 2015\Projects\GKLab3\GKLab3\obj\Debug\GKLab3.Views.AfterReductionWindow.resources

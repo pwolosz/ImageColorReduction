@@ -1,0 +1,2 @@
+GKLab3/bin
+GKLab3/obj

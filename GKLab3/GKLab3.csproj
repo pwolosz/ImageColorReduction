@@ -46,9 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FIlters\Burkes.cs" />
+    <Compile Include="FIlters\FloydSteinberg.cs" />
+    <Compile Include="FIlters\IFilter.cs" />
+    <Compile Include="FIlters\Stucky.cs" />
+    <Compile Include="Matrices\DitheringMatrix.cs" />
     <Compile Include="Methods\AverageDithering.cs" />
+    <Compile Include="Methods\ErrorDiffusion.cs" />
     <Compile Include="Methods\IMethod.cs" />
     <Compile Include="Methods\OrderedDithering.cs" />
+    <Compile Include="Methods\OrderedDitheringRandom.cs" />
     <Compile Include="Methods\PopularityAlgorithm.cs" />
     <Compile Include="Models\ColorEntity.cs" />
     <Compile Include="Models\RGBColor.cs" />

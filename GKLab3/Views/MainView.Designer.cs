@@ -30,6 +30,9 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.beforeImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.filterLabel = new System.Windows.Forms.Label();
+            this.filterComboBox = new System.Windows.Forms.ComboBox();
+            this.methodLabel = new System.Windows.Forms.Label();
             this.reduceColorsButton = new System.Windows.Forms.Button();
             this.bColor = new System.Windows.Forms.Label();
             this.gColor = new System.Windows.Forms.Label();
@@ -41,6 +44,8 @@
             this.colorsLabel = new System.Windows.Forms.Label();
             this.methodsComboBox = new System.Windows.Forms.ComboBox();
             this.openImageButton = new System.Windows.Forms.Button();
+            this.kComboBox = new System.Windows.Forms.ComboBox();
+            this.kLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -61,6 +66,11 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.kLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.kComboBox);
+            this.splitContainer1.Panel2.Controls.Add(this.filterLabel);
+            this.splitContainer1.Panel2.Controls.Add(this.filterComboBox);
+            this.splitContainer1.Panel2.Controls.Add(this.methodLabel);
             this.splitContainer1.Panel2.Controls.Add(this.reduceColorsButton);
             this.splitContainer1.Panel2.Controls.Add(this.bColor);
             this.splitContainer1.Panel2.Controls.Add(this.gColor);
@@ -84,9 +94,36 @@
             this.beforeImagePictureBox.TabIndex = 0;
             this.beforeImagePictureBox.TabStop = false;
             // 
+            // filterLabel
+            // 
+            this.filterLabel.AutoSize = true;
+            this.filterLabel.Location = new System.Drawing.Point(28, 167);
+            this.filterLabel.Name = "filterLabel";
+            this.filterLabel.Size = new System.Drawing.Size(29, 13);
+            this.filterLabel.TabIndex = 13;
+            this.filterLabel.Text = "Filter";
+            // 
+            // filterComboBox
+            // 
+            this.filterComboBox.FormattingEnabled = true;
+            this.filterComboBox.Location = new System.Drawing.Point(63, 164);
+            this.filterComboBox.Name = "filterComboBox";
+            this.filterComboBox.Size = new System.Drawing.Size(121, 21);
+            this.filterComboBox.TabIndex = 12;
+            this.filterComboBox.SelectedValueChanged += new System.EventHandler(this.ChangeFilter);
+            // 
+            // methodLabel
+            // 
+            this.methodLabel.AutoSize = true;
+            this.methodLabel.Location = new System.Drawing.Point(81, 226);
+            this.methodLabel.Name = "methodLabel";
+            this.methodLabel.Size = new System.Drawing.Size(43, 13);
+            this.methodLabel.TabIndex = 11;
+            this.methodLabel.Text = "Method";
+            // 
             // reduceColorsButton
             // 
-            this.reduceColorsButton.Location = new System.Drawing.Point(63, 191);
+            this.reduceColorsButton.Location = new System.Drawing.Point(63, 269);
             this.reduceColorsButton.Name = "reduceColorsButton";
             this.reduceColorsButton.Size = new System.Drawing.Size(86, 28);
             this.reduceColorsButton.TabIndex = 10;
@@ -165,7 +202,7 @@
             // methodsComboBox
             // 
             this.methodsComboBox.FormattingEnabled = true;
-            this.methodsComboBox.Location = new System.Drawing.Point(24, 164);
+            this.methodsComboBox.Location = new System.Drawing.Point(24, 242);
             this.methodsComboBox.Name = "methodsComboBox";
             this.methodsComboBox.Size = new System.Drawing.Size(161, 21);
             this.methodsComboBox.TabIndex = 1;
@@ -180,6 +217,24 @@
             this.openImageButton.Text = "Load image";
             this.openImageButton.UseVisualStyleBackColor = true;
             this.openImageButton.Click += new System.EventHandler(this.LoadImageButtonClick);
+            // 
+            // kComboBox
+            // 
+            this.kComboBox.FormattingEnabled = true;
+            this.kComboBox.Location = new System.Drawing.Point(63, 191);
+            this.kComboBox.Name = "kComboBox";
+            this.kComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kComboBox.TabIndex = 14;
+            this.kComboBox.SelectedValueChanged += new System.EventHandler(this.KValueChanged);
+            // 
+            // kLabel
+            // 
+            this.kLabel.AutoSize = true;
+            this.kLabel.Location = new System.Drawing.Point(43, 194);
+            this.kLabel.Name = "kLabel";
+            this.kLabel.Size = new System.Drawing.Size(14, 13);
+            this.kLabel.TabIndex = 15;
+            this.kLabel.Text = "K";
             // 
             // mainView
             // 
@@ -215,5 +270,10 @@
         private System.Windows.Forms.TextBox gTextBox;
         private System.Windows.Forms.Button reduceColorsButton;
         private System.Windows.Forms.PictureBox beforeImagePictureBox;
+        private System.Windows.Forms.Label filterLabel;
+        private System.Windows.Forms.ComboBox filterComboBox;
+        private System.Windows.Forms.Label methodLabel;
+        private System.Windows.Forms.Label kLabel;
+        private System.Windows.Forms.ComboBox kComboBox;
     }
 }

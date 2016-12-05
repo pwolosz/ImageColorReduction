@@ -1,4 +1,5 @@
-﻿using GKLab3.Models;
+﻿using GKLab3.FIlters;
+using GKLab3.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,7 +14,7 @@ namespace GKLab3.Methods
         public string Name { get { return "Popularity algorithm"; } }
 
         //Metoda zwracająca bitmapę po zastosowaniu redukcji kolorów metodą algorytmu popularnościowego
-        public Bitmap GenerateBitmap(RGBColor[,] colors)
+        public Bitmap GenerateBitmap(RGBColor[,] colors, IFilter filter)
         {
             //szerokość i wysokość obrazu
             int width = colors.GetLength(0);

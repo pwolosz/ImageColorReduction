@@ -17,6 +17,7 @@ namespace GKLab3.Models
         public static int NumOfR { get; set; }
         public static int NumOfG { get; set; }
         public static int NumOfB { get; set; }
+        public static int K { get; set; }
 
         public RGBColor(int r, int g, int b)
         {

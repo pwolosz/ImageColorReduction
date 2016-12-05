@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GKLab3.Models;
+using GKLab3.FIlters;
 
 namespace GKLab3.Methods
 {
@@ -27,7 +28,7 @@ namespace GKLab3.Methods
             }
         }
 
-        public Bitmap GenerateBitmap(RGBColor[,] colors)
+        public Bitmap GenerateBitmap(RGBColor[,] colors, IFilter filter)
         {
             int width = colors.GetLength(0);
             int height = colors.GetLength(1);

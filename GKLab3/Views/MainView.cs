@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GKLab3.Models;
 using GKLab3.Methods;
+using GKLab3.FIlters;
 
 namespace GKLab3.Views
 {
@@ -18,11 +19,13 @@ namespace GKLab3.Views
         public Bitmap AfterBitmap { get; set; }
         public RGBColor[,] RGBColors { get; set; }
         public IMethod Method { get; set; }
+        public IFilter Filter { get; set; }
 
         public mainView()
         {
             InitializeComponent();
             InitControls();
+            RGBColor.K = 2;
         }
 
         private void InitControls()
@@ -30,11 +33,25 @@ namespace GKLab3.Views
             List<IMethod> methods = new List<IMethod>() {
                 new PopularityAlgorithm(),
                 new AverageDithering(),
-                new OrderedDithering()
+                new OrderedDithering(),
+                new OrderedDitheringRandom(),
+                new ErrorDiffusion()
             };
+
+            List<IFilter> filters = new List<IFilter>() {
+                new Burkes(),
+                new FloydSteinberg(),
+                new Stucky()
+            };
+
+            List<int> kValues = new List<int>() { 2, 6, 17 };
+            kComboBox.DataSource = kValues;
 
             methodsComboBox.DataSource = methods;
             methodsComboBox.DisplayMember = "Name";
+
+            filterComboBox.DataSource = filters;
+            filterComboBox.DisplayMember = "Name";
         }
 
         private void LoadImageButtonClick(object sender, EventArgs e)
@@ -98,7 +115,7 @@ namespace GKLab3.Views
                 RGBColor.NumOfG = g;
                 RGBColor.NumOfR = r;
 
-                AfterReductionWindow afterReductionWindow = new AfterReductionWindow(Method.GenerateBitmap(RGBColors));
+                AfterReductionWindow afterReductionWindow = new AfterReductionWindow(Method.GenerateBitmap(RGBColors, Filter));
                 afterReductionWindow.Show(this);
             }
         }
@@ -106,6 +123,11 @@ namespace GKLab3.Views
         private void ChangeMethod(object sender, EventArgs e)
         {
             Method = (IMethod)methodsComboBox.SelectedItem;
+        }
+
+        private void ChangeFilter(object sender, EventArgs e)
+        {
+            Filter = (IFilter)filterComboBox.SelectedItem;
         }
 
         private void textBoxKeyPress(object sender, KeyPressEventArgs e)
@@ -125,6 +147,11 @@ namespace GKLab3.Views
         private void ReduceColorsClick(object sender, EventArgs e)
         {
             UseMethod();
+        }
+
+        private void KValueChanged(object sender, EventArgs e)
+        {
+            RGBColor.K = (int)this.kComboBox.SelectedItem;
         }
     }
 }

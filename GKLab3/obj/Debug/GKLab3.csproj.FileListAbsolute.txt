@@ -18,3 +18,13 @@ C:\Users\Patryk\Desktop\ImageColorReduction\GKLab3\obj\Debug\GKLab3.Properties.R
 C:\Users\Patryk\Desktop\ImageColorReduction\GKLab3\obj\Debug\GKLab3.Views.AfterReductionWindow.resources
 C:\Users\Patryk\Desktop\ImageColorReduction\GKLab3\obj\Debug\GKLab3.Views.mainView.resources
 C:\Users\Patryk\Desktop\ImageColorReduction\GKLab3\obj\Debug\GKLab3.csproj.GenerateResource.Cache
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\bin\Debug\GKLab3.exe.config
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.exe
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.pdb
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\bin\Debug\GKLab3.exe
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\bin\Debug\GKLab3.pdb
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.csprojResolveAssemblyReference.cache
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.Properties.Resources.resources
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.Views.AfterReductionWindow.resources
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.Views.mainView.resources
+C:\Users\Patryk\Desktop\aaa\ImageColorReduction\GKLab3\obj\Debug\GKLab3.csproj.GenerateResource.Cache

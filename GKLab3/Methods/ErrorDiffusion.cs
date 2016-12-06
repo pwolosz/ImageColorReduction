@@ -11,8 +11,8 @@ namespace GKLab3.Methods
 {
     public class ErrorDiffusion : IMethod
     {
-        private float[,,] Errors;
-        private float[,] Filter;
+        private float[,,] Errors; // Tablica błędów dla kanałów R, G i B
+        private float[,] Filter; 
         private int width;
         private int height;
 
@@ -24,6 +24,7 @@ namespace GKLab3.Methods
             }
         }
 
+        //Funkcja tworząca bitmapę po redukcji kolorów
         public Bitmap GenerateBitmap(RGBColor[,] colors, IFilter filter)
         {
             width = colors.GetLength(0);
@@ -32,48 +33,31 @@ namespace GKLab3.Methods
             Errors = new float[3,width, height];
             Filter = filter.Filter;
             int error = 0,r,g,b;
-            Color color;
+
+            //Długości przedziałów kanałów R, G i B
             int gLength = 255 / RGBColor.NumOfR;
             int rLength = 255 / RGBColor.NumOfG;
             int bLength = 255 / RGBColor.NumOfB;
-            int[,] rs = new int[width, height];
-            int[,] gs = new int[width, height];
-            int[,] bs = new int[width, height];
+
+            //Przejście po pikselach obrazu orginalnego i redukcja kolorów
             for (int i=0;i<width;i++)
             {
                 for(int j=0;j<height;j++)
                 {
                     r = CalculateColorValue(colors[i, j].R + (int)Errors[0, i, j], rLength, RGBColor.NumOfR, out error);
                     PropagateError(0, error, i, j);
-                    rs[i, j] = r;
                     g = CalculateColorValue(colors[i, j].G + (int)Errors[1, i, j], gLength, RGBColor.NumOfG, out error);
                     PropagateError(1, error, i, j);
-                    gs[i, j] = g;
                     b = CalculateColorValue(colors[i, j].B + (int)Errors[2, i, j], bLength, RGBColor.NumOfB, out error);
                     PropagateError(2, error, i, j);
-                    bs[i, j] = b;
                     bitmap.SetPixel(i, j, Color.FromArgb(r, g, b));
                 }
             }
-            int rc=0, gc=0, bc=0;
-            for(int i=0;i<width;i++)
-            {
-                for(int j=0;j<height;j++)
-                {
-                    if (rs[i, j] != 0 && rs[i, j] != 255)
-                        rc++;
-                    if (bs[i, j] != 0 && bs[i, j] != 255)
-                        bc++;
-                    if (gs[i, j] != 0 && gs[i, j] != 255)
-                        gc++;
-                }
-            }
-            int a = rc;
-            int bb = bc;
-            int c = gc;
+            
             return bitmap;
         }
 
+        //Funkcja sprawdzająca w którym przedziale mieście się kolor i zwracająca nowy kolor oraz błąd
         private int CalculateColorValue(int color, int length, int number, out int error)
         {
             error = 0;
@@ -89,6 +73,7 @@ namespace GKLab3.Methods
             return 255;
         }
 
+        //Funkcja dopisująca błędy do kolejnych pikseli 
         private void PropagateError(int hue, int value, int currentPixelX, int currentPixelY)
         {
             int xLength = Filter.GetLength(0) / 2;

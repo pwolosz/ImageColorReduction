@@ -28,16 +28,20 @@ namespace GKLab3.Methods
             }
         }
 
+        //Funkcja tworząca bitmapę po redukcji kolorów
         public Bitmap GenerateBitmap(RGBColor[,] colors, IFilter filter)
         {
             int width = colors.GetLength(0);
             int height = colors.GetLength(1);
             Bitmap bitmap = new Bitmap(width, height);
             int rLength, gLength, bLength;
+
+            //Długości przedziałów kanałów R, G i B
             rLength = 255 / RGBColor.NumOfR;
             gLength = 255 / RGBColor.NumOfG;
             bLength = 255 / RGBColor.NumOfB;
 
+            //Przejście po pikselach obrazu orginalnego i redukcja kolorów
             for (int i = 0; i < colors.GetLength(0); i++)
             {
                 for (int j = 0; j < colors.GetLength(1); j++)
@@ -53,6 +57,7 @@ namespace GKLab3.Methods
             return bitmap;
         }
 
+        //Funkcja sprawdzająca w którym przedziale mieście się kolor i zwracająca nowy kolor
         public int CountColorValue(int color, int length, int number)
         {
             for (int i = 1; i < number; i++)

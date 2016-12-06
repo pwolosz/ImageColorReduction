@@ -30,6 +30,11 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.beforeImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.errorB = new System.Windows.Forms.Label();
+            this.errorG = new System.Windows.Forms.Label();
+            this.errorR = new System.Windows.Forms.Label();
+            this.kLabel = new System.Windows.Forms.Label();
+            this.kComboBox = new System.Windows.Forms.ComboBox();
             this.filterLabel = new System.Windows.Forms.Label();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.methodLabel = new System.Windows.Forms.Label();
@@ -44,8 +49,6 @@
             this.colorsLabel = new System.Windows.Forms.Label();
             this.methodsComboBox = new System.Windows.Forms.ComboBox();
             this.openImageButton = new System.Windows.Forms.Button();
-            this.kComboBox = new System.Windows.Forms.ComboBox();
-            this.kLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,6 +69,9 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.errorB);
+            this.splitContainer1.Panel2.Controls.Add(this.errorG);
+            this.splitContainer1.Panel2.Controls.Add(this.errorR);
             this.splitContainer1.Panel2.Controls.Add(this.kLabel);
             this.splitContainer1.Panel2.Controls.Add(this.kComboBox);
             this.splitContainer1.Panel2.Controls.Add(this.filterLabel);
@@ -93,6 +99,51 @@
             this.beforeImagePictureBox.Size = new System.Drawing.Size(100, 50);
             this.beforeImagePictureBox.TabIndex = 0;
             this.beforeImagePictureBox.TabStop = false;
+            // 
+            // errorB
+            // 
+            this.errorB.AutoSize = true;
+            this.errorB.ForeColor = System.Drawing.Color.Red;
+            this.errorB.Location = new System.Drawing.Point(113, 141);
+            this.errorB.Name = "errorB";
+            this.errorB.Size = new System.Drawing.Size(0, 13);
+            this.errorB.TabIndex = 18;
+            // 
+            // errorG
+            // 
+            this.errorG.AutoSize = true;
+            this.errorG.ForeColor = System.Drawing.Color.Red;
+            this.errorG.Location = new System.Drawing.Point(113, 114);
+            this.errorG.Name = "errorG";
+            this.errorG.Size = new System.Drawing.Size(0, 13);
+            this.errorG.TabIndex = 17;
+            // 
+            // errorR
+            // 
+            this.errorR.AutoSize = true;
+            this.errorR.ForeColor = System.Drawing.Color.Red;
+            this.errorR.Location = new System.Drawing.Point(113, 87);
+            this.errorR.Name = "errorR";
+            this.errorR.Size = new System.Drawing.Size(0, 13);
+            this.errorR.TabIndex = 16;
+            // 
+            // kLabel
+            // 
+            this.kLabel.AutoSize = true;
+            this.kLabel.Location = new System.Drawing.Point(43, 194);
+            this.kLabel.Name = "kLabel";
+            this.kLabel.Size = new System.Drawing.Size(14, 13);
+            this.kLabel.TabIndex = 15;
+            this.kLabel.Text = "K";
+            // 
+            // kComboBox
+            // 
+            this.kComboBox.FormattingEnabled = true;
+            this.kComboBox.Location = new System.Drawing.Point(63, 191);
+            this.kComboBox.Name = "kComboBox";
+            this.kComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kComboBox.TabIndex = 14;
+            this.kComboBox.SelectedValueChanged += new System.EventHandler(this.KValueChanged);
             // 
             // filterLabel
             // 
@@ -155,6 +206,7 @@
             this.bTextBox.Name = "bTextBox";
             this.bTextBox.Size = new System.Drawing.Size(45, 20);
             this.bTextBox.TabIndex = 7;
+            this.bTextBox.Text = "2";
             this.bTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKeyPress);
             // 
             // gTextBox
@@ -163,6 +215,7 @@
             this.gTextBox.Name = "gTextBox";
             this.gTextBox.Size = new System.Drawing.Size(45, 20);
             this.gTextBox.TabIndex = 6;
+            this.gTextBox.Text = "2";
             this.gTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKeyPress);
             // 
             // rTextBox
@@ -171,6 +224,7 @@
             this.rTextBox.Name = "rTextBox";
             this.rTextBox.Size = new System.Drawing.Size(45, 20);
             this.rTextBox.TabIndex = 5;
+            this.rTextBox.Text = "2";
             this.rTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKeyPress);
             // 
             // colorsTextBox
@@ -179,6 +233,7 @@
             this.colorsTextBox.Name = "colorsTextBox";
             this.colorsTextBox.Size = new System.Drawing.Size(100, 20);
             this.colorsTextBox.TabIndex = 4;
+            this.colorsTextBox.Text = "2";
             this.colorsTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxKeyPress);
             // 
             // rLabel
@@ -217,24 +272,6 @@
             this.openImageButton.Text = "Load image";
             this.openImageButton.UseVisualStyleBackColor = true;
             this.openImageButton.Click += new System.EventHandler(this.LoadImageButtonClick);
-            // 
-            // kComboBox
-            // 
-            this.kComboBox.FormattingEnabled = true;
-            this.kComboBox.Location = new System.Drawing.Point(63, 191);
-            this.kComboBox.Name = "kComboBox";
-            this.kComboBox.Size = new System.Drawing.Size(121, 21);
-            this.kComboBox.TabIndex = 14;
-            this.kComboBox.SelectedValueChanged += new System.EventHandler(this.KValueChanged);
-            // 
-            // kLabel
-            // 
-            this.kLabel.AutoSize = true;
-            this.kLabel.Location = new System.Drawing.Point(43, 194);
-            this.kLabel.Name = "kLabel";
-            this.kLabel.Size = new System.Drawing.Size(14, 13);
-            this.kLabel.TabIndex = 15;
-            this.kLabel.Text = "K";
             // 
             // mainView
             // 
@@ -275,5 +312,8 @@
         private System.Windows.Forms.Label methodLabel;
         private System.Windows.Forms.Label kLabel;
         private System.Windows.Forms.ComboBox kComboBox;
+        private System.Windows.Forms.Label errorB;
+        private System.Windows.Forms.Label errorG;
+        private System.Windows.Forms.Label errorR;
     }
 }

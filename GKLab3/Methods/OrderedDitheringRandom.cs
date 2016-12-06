@@ -23,6 +23,7 @@ namespace GKLab3.Methods
             }
         }
 
+        //Funkcja tworząca bitmapę po redukcji kolorów
         public Bitmap GenerateBitmap(RGBColor[,] colors, IFilter filter)
         {
             int width = colors.GetLength(0);
@@ -34,6 +35,7 @@ namespace GKLab3.Methods
             int colR, colG, colB, reR, reG, reB, x, y;
             int n2 = n * n;
 
+            //Przejście po pikselach obrazu orginalnego i redukcja kolorów
             for (int i = 0; i < width; i++)
             {
                 for (int j = 0; j < height; j++)
@@ -59,6 +61,7 @@ namespace GKLab3.Methods
             return bitmap;
         }
 
+        //Stworzenie tablicy dostępnych kolorów
         private int[] GetColors()
         {
             int[] colors = new int[RGBColor.K];

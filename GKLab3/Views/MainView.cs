@@ -91,6 +91,10 @@ namespace GKLab3.Views
         private void UseMethod()
         {
             int colors, r, g, b;
+            bool error = false;
+
+            this.errorR.Text = this.errorG.Text = this.errorB.Text = "";
+
             if (BeforeBitmap != null && Method != null)
             {
                 if(!int.TryParse(colorsTextBox.Text,out colors))
@@ -101,13 +105,35 @@ namespace GKLab3.Views
                 {
                     r = 2;
                 }
+                else if (r < 2 || r > 256)
+                {
+                    this.errorR.Text = "<2,256>";
+                    error = true;
+                }
+
                 if (!int.TryParse(gTextBox.Text, out g))
                 {
                     g = 2;
                 }
+                else if (g < 2 || g > 256)
+                {
+                    this.errorG.Text = "<2,256>";
+                    error = true;
+                }
+
                 if (!int.TryParse(bTextBox.Text, out b))
                 {
                     b = 2;
+                }
+                else if (b < 2 || b > 256)
+                {
+                    this.errorB.Text = "<2,256>";
+                    error = true;
+                }
+
+                if(error)
+                {
+                    return;
                 }
 
                 RGBColor.NumOfB = b;
